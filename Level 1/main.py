@@ -25,12 +25,8 @@ from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.openapi.docs import get_redoc_html
 from pydantic import BaseModel, Field
 
-# Database configuration: keep database path consistent in GIP-Challenges
-CURRENT_DIR = Path(__file__).resolve().parent
-if (CURRENT_DIR / "Dev Department" / "GIP-Challenges").exists():
-    DB_PATH = CURRENT_DIR / "Dev Department" / "GIP-Challenges" / "lost_and_found.db"
-else:
-    DB_PATH = CURRENT_DIR / "lost_and_found.db"
+# Database configuration: self-contained inside Level 1 folder
+DB_PATH = Path(__file__).resolve().parent / "lost_and_found.db"
 
 # Sample dumb test data in authentic Algerian Darija
 DARIJA_SEED_ITEMS = [
