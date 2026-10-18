@@ -2,48 +2,54 @@
 
 Welcome to the **GIP-Challenges** repository for the GDG Algiers Development Department!
 
-This repository contains solutions to the internship/recruitment challenges, organized cleanly by level.
+This repository contains all solutions for the department challenges, organized by Challenge difficulty and Level.
+
+---
+
+## Repository Structure
+
+```text
+GIP-Challenges/
+|-- Challenge-01-Easy/
+|   |-- Level 1/            # Task 01: Lost & Found REST API (FastAPI + SQLite)
+|   |-- Level 2/            # Task 02: Interactive Calculator (HTML/CSS/JS)
+|   |-- Level 3/            # Task 03: (Upcoming)
+|   `-- README.md
+|-- Challenge-02-Medium/    # (Upcoming)
+|-- Challenge-03-Hard/      # (Upcoming)
+`-- README.md
+```
 
 ---
 
 ## Challenges Directory
 
-| Level | Challenge | Tech Stack | Status | Details |
+| Challenge | Difficulty | Levels Included | Status | Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **Level 1** | Lost & Found REST API | FastAPI + SQLite | Completed | [View Level 1 Details & Documentation](./Level%201/README.md) |
-| **Level 2** | Interactive Scientific Calculator | HTML5, CSS3, Vanilla JS | Completed | [View Level 2 Details & Documentation](./Level%202/README.md) |
-| **Level 3** | Upcoming Challenge | TBD | In Progress | Coming soon |
+| **Challenge 01** | Easy | Level 1, Level 2, Level 3 | In Progress (2/3) | [Challenge 01 Details](./Challenge-01-Easy/README.md) |
+| **Challenge 02** | Medium | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
+| **Challenge 03** | Hard | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
 
 ---
 
-## Quick Start - Level 1 (Lost & Found API)
+## Quick Start - Challenge 01: Easy
 
-To run the Level 1 challenge:
-
+### Level 1 (Lost & Found API)
 ```bash
-cd "Level 1"
+cd "Challenge-01-Easy/Level 1"
 python -m uvicorn main:app --reload --port 8000
 ```
+- Interactive Swagger UI: `http://127.0.0.1:8000/docs`
+- ReDoc UI: `http://127.0.0.1:8000/redoc`
 
-- Interactive Swagger Docs: `http://127.0.0.1:8000/docs`
-- ReDoc Documentation: `http://127.0.0.1:8000/redoc`
-
-To run tests for Level 1:
-
+Run automated tests:
 ```bash
-pytest "Level 1"
+pytest "Challenge-01-Easy/Level 1"
 ```
 
----
-
-## Quick Start - Level 2 (Interactive Calculator)
-
-To run the Level 2 challenge:
-
+### Level 2 (Interactive Calculator)
 ```bash
-cd "Level 2"
-# Simply open index.html in your browser, or start a local server:
+cd "Challenge-01-Easy/Level 2"
 python -m http.server 3000
 ```
-
 Open `http://localhost:3000` in your web browser.
