@@ -13,7 +13,7 @@ GIP-Challenges/
 |-- Challenge-01-Easy/
 |   |-- Level 1/            # Task 01: Lost & Found REST API (FastAPI + SQLite)
 |   |-- Level 2/            # Task 02: Interactive Calculator (HTML/CSS/JS)
-|   |-- Level 3/            # Task 03: (Upcoming)
+|   |-- Level 3/            # Task 03: Unique Binary String (Python 3)
 |   `-- README.md
 |-- Challenge-02-Medium/    # (Upcoming)
 |-- Challenge-03-Hard/      # (Upcoming)
@@ -26,7 +26,7 @@ GIP-Challenges/
 
 | Challenge | Difficulty | Levels Included | Status | Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **Challenge 01** | Easy | Level 1, Level 2, Level 3 | In Progress (2/3) | [Challenge 01 Details](./Challenge-01-Easy/README.md) |
+| **Challenge 01** | Easy | Level 1, Level 2, Level 3 | Completed (3/3) | [Challenge 01 Details](./Challenge-01-Easy/README.md) |
 | **Challenge 02** | Medium | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
 | **Challenge 03** | Hard | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
 
@@ -53,3 +53,14 @@ cd "Challenge-01-Easy/Level 2"
 python -m http.server 3000
 ```
 Open `http://localhost:3000` in your web browser.
+
+### Level 3 (Unique Binary String)
+```bash
+cd "Challenge-01-Easy/Level 3"
+python solution.py
+```
+
+Run automated tests:
+```bash
+pytest "Challenge-01-Easy/Level 3"
+```
