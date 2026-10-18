@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Calculator - GDG Algiers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="badge">Level 2 Challenge</div>
+      <h1 class="app-title">Scientific Calculator</h1>
+      <p class="app-subtitle">Vanilla HTML, CSS, and JS with full keyboard support & operator precedence</p>
+    </header>
+
+    <main class="calculator-layout">
+      <!-- Main Calculator Card -->
+      <section class="calculator-card" aria-label="Calculator">
+        <!-- Top bar with brand & history toggle -->
+        <div class="card-top-bar">
+          <span class="calc-label">STANDARD</span>
+          <button type="button" class="btn-toggle-history" id="btn-toggle-history" title="Toggle calculation history">History</button>
+        </div>
+
+        <!-- Display Screen -->
+        <div class="screen-container">
+          <div class="screen-history" id="screen-history" aria-live="polite"></div>
+          <div class="screen-main" id="screen-main" aria-live="assertive">0</div>
+        </div>
+
+        <!-- Scientific / Utility Bar (4 columns) -->
+        <div class="utility-bar">
+          <button type="button" class="btn btn-paren" data-value="(" id="btn-paren-open" title="Open Parenthesis">(</button>
+          <button type="button" class="btn btn-paren" data-value=")" id="btn-paren-close" title="Close Parenthesis">)</button>
+          <button type="button" class="btn btn-util" data-value="^" id="btn-power" title="Power / Exponent">^</button>
+          <button type="button" class="btn btn-util" data-action="ans" id="btn-ans" title="Insert last answer">Ans</button>
+        </div>
+
+        <!-- Main Keypad Grid (4 columns x 5 rows) -->
+        <div class="keypad-grid">
+          <!-- Row 1: Clear, Backspace, Modulo, Division -->
+          <button type="button" class="btn btn-danger" data-action="clear" id="btn-clear" title="All Clear">AC</button>
+          <button type="button" class="btn btn-danger" data-action="backspace" id="btn-backspace" title="Delete last character">DEL</button>
+          <button type="button" class="btn btn-operator" data-value="%" id="btn-mod" title="Modulo remainder">%</button>
+          <button type="button" class="btn btn-operator" data-value="/" id="btn-div" title="Divide">/</button>
+
+          <!-- Row 2: 7, 8, 9, Multiplication -->
+          <button type="button" class="btn btn-number" data-value="7" id="btn-7">7</button>
+          <button type="button" class="btn btn-number" data-value="8" id="btn-8">8</button>
+          <button type="button" class="btn btn-number" data-value="9" id="btn-9">9</button>
+          <button type="button" class="btn btn-operator" data-value="*" id="btn-mul" title="Multiply">*</button>
+
+          <!-- Row 3: 4, 5, 6, Subtraction -->
+          <button type="button" class="btn btn-number" data-value="4" id="btn-4">4</button>
+          <button type="button" class="btn btn-number" data-value="5" id="btn-5">5</button>
+          <button type="button" class="btn btn-number" data-value="6" id="btn-6">6</button>
+          <button type="button" class="btn btn-operator" data-value="-" id="btn-sub" title="Subtract">-</button>
+
+          <!-- Row 4: 1, 2, 3, Addition -->
+          <button type="button" class="btn btn-number" data-value="1" id="btn-1">1</button>
+          <button type="button" class="btn btn-number" data-value="2" id="btn-2">2</button>
+          <button type="button" class="btn btn-number" data-value="3" id="btn-3">3</button>
+          <button type="button" class="btn btn-operator" data-value="+" id="btn-add" title="Add">+</button>
+
+          <!-- Row 5: Negate, 0, Decimal Point, Equals -->
+          <button type="button" class="btn btn-util" data-action="toggle-sign" id="btn-negate" title="Toggle positive/negative sign">+/-</button>
+          <button type="button" class="btn btn-number" data-value="0" id="btn-0">0</button>
+          <button type="button" class="btn btn-number" data-value="." id="btn-dot" title="Decimal point">.</button>
+          <button type="button" class="btn btn-equals" data-action="calculate" id="btn-equals" title="Calculate">=</button>
+        </div>
+      </section>
+
+      <!-- History Panel -->
+      <aside class="history-panel" id="history-panel">
+        <div class="history-header">
+          <h2 class="history-title">Calculation History</h2>
+          <button type="button" class="btn-clear-history" id="btn-clear-history" title="Clear history">Clear</button>
+        </div>
+        <div class="history-list" id="history-list">
+          <p class="history-empty">No calculations yet. Enter an expression and hit =</p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Keyboard Reference Help -->
+    <footer class="app-footer">
+      <div class="shortcuts-card">
+        <h3 class="shortcuts-title">Keyboard Shortcuts</h3>
+        <div class="shortcuts-grid">
+          <span class="shortcut-item"><kbd>0</kbd>-<kbd>9</kbd> Numbers</span>
+          <span class="shortcut-item"><kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd> Operators</span>
+          <span class="shortcut-item"><kbd>(</kbd> <kbd>)</kbd> Parentheses</span>
+          <span class="shortcut-item"><kbd>^</kbd> Power / Exponent</span>
+          <span class="shortcut-item"><kbd>%</kbd> Modulo</span>
+          <span class="shortcut-item"><kbd>Enter</kbd> or <kbd>=</kbd> Calculate</span>
+          <span class="shortcut-item"><kbd>Backspace</kbd> Delete</span>
+          <span class="shortcut-item"><kbd>Esc</kbd> or <kbd>c</kbd> All Clear</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

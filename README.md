@@ -11,7 +11,7 @@ This repository contains solutions to the internship/recruitment challenges, org
 | Level | Challenge | Tech Stack | Status | Details |
 | :--- | :--- | :--- | :--- | :--- |
 | **Level 1** | Lost & Found REST API | FastAPI + SQLite | Completed | [View Level 1 Details & Documentation](./Level%201/README.md) |
-| **Level 2** | Upcoming Challenge | TBD | In Progress | Coming soon |
+| **Level 2** | Interactive Scientific Calculator | HTML5, CSS3, Vanilla JS | Completed | [View Level 2 Details & Documentation](./Level%202/README.md) |
 | **Level 3** | Upcoming Challenge | TBD | In Progress | Coming soon |
 
 ---
@@ -33,3 +33,17 @@ To run tests for Level 1:
 ```bash
 pytest "Level 1"
 ```
+
+---
+
+## Quick Start - Level 2 (Interactive Calculator)
+
+To run the Level 2 challenge:
+
+```bash
+cd "Level 2"
+# Simply open index.html in your browser, or start a local server:
+python -m http.server 3000
+```
+
+Open `http://localhost:3000` in your web browser.
