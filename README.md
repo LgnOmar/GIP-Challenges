@@ -20,7 +20,11 @@ GIP-Challenges/
 |   |-- Level 2/            # Task 02: Secure Auth API (FastAPI + SQLite + JWT)
 |   |-- Level 3/            # Task 03: First Missing Positive (Python 3)
 |   `-- README.md
-|-- Challenge-03-Hard/      # (Upcoming)
+|-- Challenge-03-Hard/       # Flash Sale Backend API (FastAPI + SQLite)
+|   |-- main.py
+|   |-- seed.py
+|   |-- test_api.py
+|   `-- README.md
 `-- README.md
 ```
 
@@ -32,7 +36,7 @@ GIP-Challenges/
 | :--- | :--- | :--- | :--- | :--- |
 | **Challenge 01** | Easy | Level 1, Level 2, Level 3 | Completed (3/3) | [Challenge 01 Details](./Challenge-01-Easy/README.md) |
 | **Challenge 02** | Medium | Level 1, Level 2, Level 3 | Completed (3/3) | [Challenge 02 Details](./Challenge-02-Medium/README.md) |
-| **Challenge 03** | Hard | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
+| **Challenge 03** | Hard | Flash Sale Backend API | Completed | [Challenge 03 Details](./Challenge-03-Hard/README.md) |
 
 ---
 
