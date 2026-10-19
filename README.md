@@ -40,35 +40,12 @@ GIP-Challenges/
 
 ---
 
-## Quick Start - Challenge 01: Easy
+## Getting Started
 
-### Level 1 (Lost & Found API)
-```bash
-cd "Challenge-01-Easy/Level 1"
-python -m uvicorn main:app --reload --port 8000
-```
-- Interactive Swagger UI: `http://127.0.0.1:8000/docs`
-- ReDoc UI: `http://127.0.0.1:8000/redoc`
+Each challenge directory contains its own documentation, requirements, execution instructions, and test commands:
 
-Run automated tests:
-```bash
-pytest "Challenge-01-Easy/Level 1"
-```
+- **[Challenge 01 - Easy](./Challenge-01-Easy/README.md)**: Lost & Found API, Interactive Calculator, and Unique Binary String.
+- **[Challenge 02 - Medium](./Challenge-02-Medium/README.md)**: Client-side Autocomplete Search, Secure Auth API, and First Missing Positive.
+- **[Challenge 03 - Hard](./Challenge-03-Hard/README.md)**: Concurrency-safe Flash Sale Backend API.
 
-### Level 2 (Interactive Calculator)
-```bash
-cd "Challenge-01-Easy/Level 2"
-python -m http.server 3000
-```
-Open `http://localhost:3000` in your web browser.
-
-### Level 3 (Unique Binary String)
-```bash
-cd "Challenge-01-Easy/Level 3"
-python solution.py
-```
-
-Run automated tests:
-```bash
-pytest "Challenge-01-Easy/Level 3"
-```
+For detailed setup, running instructions, and test suites, please refer to the respective challenge folder.
