@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Search - Autocomplete</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <span class="badge">Challenge 02 - Level 1</span>
+      <h1 class="title">Country Search</h1>
+      <p class="subtitle">Autocomplete with mid-word matching, accent-insensitive, and apostrophe-normalized search</p>
+    </header>
+
+    <div class="search-wrapper" id="search-wrapper">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Search countries... try 'land', 'cote', 'guinea'"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search countries"
+          aria-autocomplete="list"
+          aria-controls="suggestions-list"
+          aria-expanded="false"
+        >
+        <button type="button" class="clear-btn" id="clear-btn" title="Clear search" aria-label="Clear search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="suggestions" id="suggestions-list" role="listbox" aria-label="Country suggestions"></ul>
+    </div>
+
+    <div class="info-bar" id="info-bar"></div>
+
+    <footer class="footer">
+      <div class="features">
+        <span class="feature-tag">Mid-word matching</span>
+        <span class="feature-tag">Accent-insensitive</span>
+        <span class="feature-tag">Apostrophe-normalized</span>
+        <span class="feature-tag">Relevance-ranked</span>
+        <span class="feature-tag">Keyboard navigable</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="search.js"></script>
+</body>
+</html>
