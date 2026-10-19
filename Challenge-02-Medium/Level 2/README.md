@@ -68,3 +68,15 @@ Run the test suite using pytest:
 ```bash
 pytest test_auth.py
 ```
+
+---
+
+### Render Deployment Settings
+
+- **Root Directory**: `Challenge-02-Medium/Level 2`
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+- **Environment Variables**:
+  - `JWT_SECRET`: Any secure random string (required in production)
+  - `ENVIRONMENT`: `production`
+

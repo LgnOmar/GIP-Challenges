@@ -1,4 +1,6 @@
+from pathlib import Path
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, EmailStr, Field
 import sqlite3
@@ -10,10 +12,19 @@ from contextlib import contextmanager
 
 # --- Configuration ---
 
-SECRET_KEY = os.environ.get("JWT_SECRET", "gdg-algiers-dev-secret-key-medium-challenge")
+ENVIRONMENT = os.environ.get("ENVIRONMENT", "development").lower()
+SECRET_KEY = os.environ.get("JWT_SECRET")
+
+if not SECRET_KEY:
+    if ENVIRONMENT == "production" or os.environ.get("RENDER"):
+        raise RuntimeError("JWT_SECRET environment variable is missing in production environment!")
+    # Convenient fallback strictly for local development and offline test suites
+    SECRET_KEY = "dev-insecure-secret-key-change-in-production"
+
 ALGORITHM = "HS256"
 TOKEN_EXPIRY_MINUTES = 30
-DB_PATH = os.environ.get("DB_PATH", "auth.db")
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = os.environ.get("DB_PATH", str(BASE_DIR / "auth.db"))
 
 # --- Database ---
 
@@ -95,6 +106,15 @@ class TokenResponse(BaseModel):
 # --- App & Dependencies ---
 
 app = FastAPI(title="Auth Service - Challenge 02 Level 2")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 security = HTTPBearer(auto_error=True)
 
 @app.on_event("startup")

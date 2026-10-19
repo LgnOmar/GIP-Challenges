@@ -119,3 +119,11 @@ curl -X PATCH "http://127.0.0.1:8000/items/1/recover" \
     "reporter_email": "mourad.claquette@gmail.com"
   }'
 ```
+
+---
+
+## Render Deployment Settings
+
+- **Root Directory**: `Challenge-01-Easy/Level 1`
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`

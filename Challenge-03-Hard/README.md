@@ -126,3 +126,12 @@ curl http://127.0.0.1:8000/orders -H "X-User-Id: alice"
 - **No authentication**: Users are identified solely by the `X-User-Id` header with no verification.
 - **No idempotency key expiration**: Keys are stored indefinitely. A production system would expire them after a TTL.
 - **No pagination**: `GET /products` and `GET /orders` return all records. Fine for challenge-scale data.
+
+---
+
+## Render Deployment Settings
+
+- **Root Directory**: `Challenge-03-Hard`
+- **Build Command**: `pip install -r requirements.txt`
+- **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+

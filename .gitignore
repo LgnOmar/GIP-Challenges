@@ -2,4 +2,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.db
+*.db-journal
+*.db-wal
+*.db-shm
 .pytest_cache/
+.env
+.env.*
+!.env.example

@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_redoc_html
 from pydantic import BaseModel, Field
 
@@ -158,6 +159,14 @@ app = FastAPI(
     ),
     version="1.0.0",
     redoc_url=None,  # Custom ReDoc route defined below to avoid import.meta JS bundle bug
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

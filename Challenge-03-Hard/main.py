@@ -16,16 +16,19 @@ import json
 import hashlib
 import datetime
 import sqlite3
+from pathlib import Path
 from contextlib import contextmanager
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Header, status
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 
 # --- Configuration ---
 
-DB_PATH = os.environ.get("DB_PATH", "flash_sale.db")
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = os.environ.get("DB_PATH", str(BASE_DIR / "flash_sale.db"))
 
 
 # --- Database ---
@@ -105,6 +108,14 @@ class OrderRequest(BaseModel):
 # --- Application ---
 
 app = FastAPI(title="Flash Sale API - Challenge 03: Hard")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
