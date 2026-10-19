@@ -15,7 +15,11 @@ GIP-Challenges/
 |   |-- Level 2/            # Task 02: Interactive Calculator (HTML/CSS/JS)
 |   |-- Level 3/            # Task 03: Unique Binary String (Python 3)
 |   `-- README.md
-|-- Challenge-02-Medium/    # (Upcoming)
+|-- Challenge-02-Medium/
+|   |-- Level 1/            # Task 01: Client-Side Autocomplete Search (HTML/CSS/JS)
+|   |-- Level 2/            # Task 02: Secure Auth API (FastAPI + SQLite + JWT)
+|   |-- Level 3/            # Task 03: First Missing Positive (Python 3)
+|   `-- README.md
 |-- Challenge-03-Hard/      # (Upcoming)
 `-- README.md
 ```
@@ -27,7 +31,7 @@ GIP-Challenges/
 | Challenge | Difficulty | Levels Included | Status | Link |
 | :--- | :--- | :--- | :--- | :--- |
 | **Challenge 01** | Easy | Level 1, Level 2, Level 3 | Completed (3/3) | [Challenge 01 Details](./Challenge-01-Easy/README.md) |
-| **Challenge 02** | Medium | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
+| **Challenge 02** | Medium | Level 1, Level 2, Level 3 | Completed (3/3) | [Challenge 02 Details](./Challenge-02-Medium/README.md) |
 | **Challenge 03** | Hard | Level 1, Level 2, Level 3 | Upcoming | Coming soon |
 
 ---
